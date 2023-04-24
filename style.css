@@ -1,7 +1,7 @@
 /* Reset default styles */
 ul {
   margin: 0;
-  padding: 0px;
+  padding: 0;
   list-style-type: none;
 }
 input,
@@ -12,19 +12,25 @@ button {
 .page {
   background-color: #f8f8f8;
   color: #333;
-  font-family: Lato, sans-serif;
+  font-family: "Lato", sans-serif;
 }
-.header {
+.container {
+  display: block;
   width: 500px;
   margin: 0 auto;
+}
+.header {
   display: block;
   text-align: right;
+}
+.page__header {
+  margin-bottom: 16px;
 }
 .header__image {
   width: 100%;
 }
 .header__link {
-  font-family: fantasy, cursive;
+  font-family: "Fantasy", cursive;
 }
 
 @media (max-width: 768px) {
@@ -34,27 +40,21 @@ button {
   }
 
 }
-.container {
-  display: block;
-  width: 500px;
-  margin: 0 auto 0;
-}
 
-/* Mix class */
+/* Mix classes */
 .button {
   background: none;
-  border: 0px;
+  border: none;
   color: #888;
   font-size: 15px;
   width: 60px;
-  font-family: Lato, sans-serif;
+  font-family: "Lato", sans-serif;
   cursor: pointer;
   outline: none;
 }
 .button:hover {
   color: #3a3a3a;
 }
-/* Heading */
 .title {
   color: #333;
   font-weight: 700;
@@ -74,7 +74,7 @@ button {
   border: 1px solid #ddd;
   background: #fff;
   border-radius: 6px;
-  font-family: Lato, sans-serif;
+  font-family: "Lato", sans-serif;
   color: #888;
 }
 .field:focus {
@@ -114,13 +114,13 @@ button {
   margin: 0 10px;
 }
 .task__name {
-  width: 56%;
+  /* width: 56%; */
+  width: 226px;
   display: inline-block;
   flex-grow: 1;
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
-  width: 226px;
 }
 .task__field {
   flex-grow: 1;
