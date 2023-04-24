@@ -114,7 +114,6 @@ button {
   margin: 0 10px;
 }
 .task__name {
-  /* width: 56%; */
   width: 226px;
   display: inline-block;
   flex-grow: 1;
