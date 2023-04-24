@@ -12,6 +12,13 @@ var taskInput=document.querySelector('.add-task__field');//Add a new task.
 var addButton=document.querySelector('.add-task__add-button');//first button
 var incompleteTaskHolder=document.querySelector('.incompleted-tasks__list');//ul of #incompleteTasks
 var completedTasksHolder=document.querySelector('.completed-tasks__list');//completed-tasks
+var addItemTitle=document.querySelector('.add-task__title');
+
+
+var focusField=function(){
+    taskInput.focus();
+}
+addItemTitle.onclick=focusField;
 
 
 // //New task list item
@@ -36,10 +43,11 @@ var createNewTaskElement=function(taskString){
   label.className='task__name';
 
   //Each elements, needs appending
+  listItem.className="task incompleted-tasks__item";
   checkBox.type='checkbox';
   checkBox.className='task__checkbox';
   editInput.type='text';
-  editInput.className='field task__field';
+  editInput.className='field task__field field_invisible';
 
   editButton.innerText='Edit'; //innerText encodes special characters, HTML does not.
   editButton.className='task__edit-button button';
@@ -132,7 +140,10 @@ var taskCompleted=function(){
   var listItem=this.parentNode;
   completedTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
-
+  if (listItem.classList.contains('task_edit'))
+    listItem.className="task task_edit completed-tasks__item";
+  else
+    listItem.className="task completed-tasks__item";
 }
 
 
