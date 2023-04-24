@@ -155,6 +155,10 @@ var taskIncomplete=function(){
   var listItem=this.parentNode;
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem,taskCompleted);
+  if (listItem.classList.contains('task_edit'))
+    listItem.className="task task_edit incompleted-tasks__item";
+  else
+    listItem.className="task incompleted-tasks__item";
 }
 
 
